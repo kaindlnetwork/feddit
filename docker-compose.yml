@@ -1,33 +1,23 @@
-# This docker-compose file is made for development purpose and build from source, if you want to use teddit in production, the README contains a production-ready docker-compose setup.
-
-version: "3.8"
-
 services:
-
-  teddit:
-    container_name: teddit
+  photoprism-swipe:
     build: .
-    environment:
-      - REDIS_HOST=teddit-redis
+    container_name: photoprism-swipe
+    restart: unless-stopped
     ports:
       - "8080:8080"
-    networks:
-      - teddit_net
-    healthcheck:
-      test: ["CMD", "wget" ,"--no-verbose", "--tries=1", "--spider", "http://localhost:8080/about"]
-      interval: 1m
-      timeout: 3s
-    depends_on:
-      - teddit-redis
-
-  teddit-redis:
-    container_name: teddit-redis
-    image: redis:6.2.5-alpine
-    command: redis-server
     environment:
-      - REDIS_REPLICATION_MODE=master
-    networks:
-      - teddit_net
-
-networks:
-  teddit_net:
+      # Adresse deiner PhotoPrism-Instanz (vom Container aus erreichbar)
+      PHOTOPRISM_URL: "http://photoprism:2342"
+      # Entweder App-Passwort / Access-Token ...
+      PHOTOPRISM_TOKEN: ""
+      # ... oder Benutzername + Passwort
+      PHOTOPRISM_USERNAME: "admin"
+      PHOTOPRISM_PASSWORD: "changeme"
+      # Schützt die Swipe-Seite per Browser-Login (dringend empfohlen)
+      APP_PASSWORD: "bitte-aendern"
+      # Optional: behaltene Fotos zusätzlich in dieses Album legen
+      KEEP_ALBUM: ""
+      # Erlaubt das endgültige Löschen archivierter Fotos aus den Einstellungen
+      ALLOW_PERMANENT_DELETE: "false"
+    volumes:
+      - ./data:/data

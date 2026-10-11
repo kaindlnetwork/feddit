@@ -1,38 +1,14 @@
 {
-  "name": "teddit",
-  "version": "0.4.8",
-  "description": "A free and open source alternative Reddit front-end focused on privacy.",
-  "homepage": "https://teddit.net",
-  "bugs": {
-    "url": "https://codeberg.org/teddit/teddit/issues"
-  },
-  "license": "AGPL-3.0",
-  "funding": [
-    {
-      "type": "XMR",
-      "url": "832ogRwuoSs2JGYg7wJTqshidK7dErgNdfpenQ9dzMghNXQTJRby1xGbqC3gW3GAifRM9E84J91VdMZRjoSJ32nkAZnaCEj"
-    }
-  ],
-  "main": "app.js",
-  "repository": {
-    "type": "git",
-    "url": "https://codeberg.org/teddit/teddit"
-  },
+  "name": "photoprism-swipe",
+  "version": "1.0.0",
+  "description": "Fotos in PhotoPrism wie bei Tinder aussortieren: rechts behalten, links löschen.",
+  "main": "server.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node server.js"
   },
-  "dependencies": {
-    "compression": "^1.7.4",
-    "cookie-parser": "^1.4.5",
-    "express": "^4.18.1",
-    "helmet": "^4.6.0",
-    "https-proxy-agent": "^5.0.1",
-    "minizlib": "^2.1.2",
-    "node-fetch": "^3.2.10",
-    "postman-request": "^2.88.1-postman.31",
-    "pug": "^3.0.3",
-    "redis": "^4.2.0"
+  "engines": {
+    "node": ">=20"
   },
-  "devDependencies": {}
+  "license": "MIT"
 }

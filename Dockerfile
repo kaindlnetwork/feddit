@@ -1,19 +1,18 @@
-# Use LTS Node.js slim image
-FROM node:18-bullseye-slim
+FROM node:22-alpine
 
-# Video support dependency
-RUN apt-get update && apt-get install -y --no-install-recommends ffmpeg=7:4.3.4-0+deb11u1 wget=1.21-1+deb11u1 && apt-get clean \
- && rm -rf /var/lib/apt/lists/*
+ENV NODE_ENV=production \
+    PORT=8080 \
+    DATA_DIR=/data
 
-# Install NPM dependencies and copy the project
-WORKDIR /teddit
-COPY . ./
-RUN npm install --no-optional
-COPY config.js.template ./config.js
+WORKDIR /app
+COPY package.json server.js ./
+COPY public ./public
 
-RUN find ./static/ -type d -exec chmod -R 777 {} \;
+RUN mkdir -p /data && chown node:node /data
+USER node
+VOLUME ["/data"]
+EXPOSE 8080
 
-HEALTHCHECK --interval=30s --timeout=3s --retries=5 --start-period=10s  \
-  CMD wget --no-verbose --spider http://localhost:8080/about
+HEALTHCHECK --interval=30s --timeout=5s CMD wget -qO- http://127.0.0.1:8080/healthz || exit 1
 
-CMD npm start
+CMD ["node", "server.js"]

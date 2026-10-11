@@ -1,1 +1,4 @@
-.gitignore
+.git
+data
+.env
+node_modules
