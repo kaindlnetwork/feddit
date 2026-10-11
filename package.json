@@ -1,0 +1,14 @@
+{
+  "name": "photoprism-swipe",
+  "version": "1.0.0",
+  "description": "Fotos in PhotoPrism wie bei Tinder aussortieren: rechts behalten, links löschen.",
+  "main": "server.js",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,83 @@
+/* Kaindl Network Design System — Tokens (aus tokens.json) */
+:root, [data-theme="light"] {
+  --accent: #0071e3;
+  --accent-hover: #0077ed;
+  --accent-pressed: #006edb;
+  --accent-soft: rgba(0, 113, 227, 0.08);
+  --accent-soft-hi: rgba(0, 113, 227, 0.18);
+  --bg: #fbfbfd;
+  --bg-elevated: #ffffff;
+  --bg-sidebar: rgba(255,255,255,0.72);
+  --bg-chrome: rgba(251,251,253,0.82);
+  --text-primary: #1d1d1f;
+  --text-secondary: #3a3a3d;
+  --text-tertiary: #545458;
+  --hairline: rgba(0,0,0,0.08);
+  --hairline-strong: rgba(0,0,0,0.14);
+  --ok: #30d158;
+  --warn: #ff9500;
+  --danger: #ff3b30;
+  --ok-soft: rgba(48, 209, 88, 0.14);
+  --warn-soft: rgba(255, 149, 0, 0.14);
+  --danger-soft: rgba(255, 59, 48, 0.14);
+  --db-red: #e8375b;
+  --instrument-amber: #ffb800;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.04), 0 0 0 0.5px rgba(0,0,0,0.06);
+  --shadow-md: 0 2px 6px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06), 0 0 0 0.5px rgba(0,0,0,0.05);
+  --shadow-lg: 0 16px 48px rgba(0,0,0,0.14), 0 0 0 0.5px rgba(0,0,0,0.08);
+}
+[data-theme="dark"] {
+  --accent-soft: rgba(10,132,255,0.16);
+  --bg: #000000;
+  --bg-elevated: #1c1c1e;
+  --bg-sidebar: rgba(28,28,30,0.72);
+  --bg-chrome: rgba(0,0,0,0.82);
+  --text-primary: #f5f5f7;
+  --text-secondary: #d1d1d6;
+  --text-tertiary: #a8a8ad;
+  --hairline: rgba(255,255,255,0.09);
+  --hairline-strong: rgba(255,255,255,0.15);
+  --ok-soft: rgba(48,209,88,0.20);
+  --warn-soft: rgba(255,149,0,0.22);
+  --danger-soft: rgba(255,59,48,0.22);
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.4), 0 0 0 0.5px rgba(255,255,255,0.06);
+  --shadow-md: 0 2px 6px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.4), 0 0 0 0.5px rgba(255,255,255,0.06);
+  --shadow-lg: 0 20px 48px rgba(0,0,0,0.5), 0 0 0 0.5px rgba(255,255,255,0.08);
+}
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+  --radius-xl: 22px;
+  --radius-pill: 999px;
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "DejaVu Sans Mono", "Liberation Mono", monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --accent-soft: rgba(10,132,255,0.16);
+    --bg: #000000;
+    --bg-elevated: #1c1c1e;
+    --bg-sidebar: rgba(28,28,30,0.72);
+    --bg-chrome: rgba(0,0,0,0.82);
+    --text-primary: #f5f5f7;
+    --text-secondary: #d1d1d6;
+    --text-tertiary: #a8a8ad;
+    --hairline: rgba(255,255,255,0.09);
+    --hairline-strong: rgba(255,255,255,0.15);
+    --ok-soft: rgba(48,209,88,0.20);
+    --warn-soft: rgba(255,149,0,0.22);
+    --danger-soft: rgba(255,59,48,0.22);
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.4), 0 0 0 0.5px rgba(255,255,255,0.06);
+    --shadow-md: 0 2px 6px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.4), 0 0 0 0.5px rgba(255,255,255,0.06);
+    --shadow-lg: 0 20px 48px rgba(0,0,0,0.5), 0 0 0 0.5px rgba(255,255,255,0.08);
+  }
+}
